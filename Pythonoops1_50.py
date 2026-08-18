@@ -33,8 +33,18 @@ else:
     print("year is nota leap year")
 
 
-#Fibonacce Series
+#largest list/array functions
+arr=[10,20,30,40,50]
+res=arr[0]
+for i in range(1,len(arr)):
+    if arr[i]>res:
+        res=arr[i]
+print(res)
 
-#number is Prime or NOT
+#using loop
+a=[1,2,3,4,5]
+c=0
+for val in a:
+    c+=1
 
-
+print c
