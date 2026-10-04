@@ -1,50 +1,49 @@
 
+class User:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    def display_info(self):
+        print(f"Name: {self.name}, Age: {self.age}")
 
-#1Factorial of a number
-  #for Loo
-n=8
-if n<0:
-    print("Negative")
-else:
-    f=1
-    for i in range(1,n+1):
-        f *=i
-print(f)
+user=User("Alice", 30)
+user.display_info()
 
-#2 Recursive function
-def fact(n):
-    if n<0:
-        print(Negative)
-    return 1 if n<=1 else n * fact(n-1)
+#inheritance
+class Admin(User):
+    def __init__(self, name, age, role):
+        super().__init__(name, age)
+        self.role = role
+    def display_info(self):
+        super().display_info()
+        print(f"Role: {self.role}")
+
+
+admin=Admin("Bob", 40, "Administrator")
+admin.display_info()    
+
+#inheritance with multiple classes
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+class Employee(Person):
+    def __init__(self, name, employee_id):
+        super().__init__(name)
+        self.employee_id = employee_id
+
+
+class Manager(Employee):
+    def __init__(self, name, employee_id, department):
+        super().__init__(name, employee_id)
+        self.department = department
+
+    def display_info(self):
+                    print(f"Name: {self.name}, Employee ID: {self.employee_id}, Department: {self.department}")       
+
+manager=Manager("Charlie", 12345, "Sales")
+manager.display_info()
+
+#abstraction
     
 
-print(fact(6))
-
-#Simple Interest /Lamda function-->Simple anoymous function which has 1 express and no return
-#3
-p,n,r=1000,2,5
-si=lambda p,n,r:(p*n*r)/100
-print(si(p,n,r))
-#4Leap Year
-year=int(input("Enter Year:"))
-if(year%4 ==0 and year %100==0 or year%400==0):
-    print("year is a leap")
-else:
-    print("year is nota leap year")
-
-
-#largest list/array functions
-arr=[10,20,30,40,50]
-res=arr[0]
-for i in range(1,len(arr)):
-    if arr[i]>res:
-        res=arr[i]
-print(res)
-
-#using loop
-a=[1,2,3,4,5]
-c=0
-for val in a:
-    c+=1
-
-print c
